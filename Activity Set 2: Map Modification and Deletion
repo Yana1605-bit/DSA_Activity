@@ -14,7 +14,7 @@ int main(){
 	//Updated Alice's age
 	PeopleMap["Alice"] = 16;
 	
-	cout << "Names & Ages: " << endl;
+	cout << "Map Size: " << endl;
 	for (const auto &age : PeopleMap){
 		cout << age.first << ", " << age.second << endl;
 	}
@@ -29,7 +29,7 @@ int main(){
 	//Erasing Bob
 	PeopleMap.erase("Charlie");
 	
-	cout << "Updated Map Size:" << endl;
+	cout << "Updated Map Size: " << PeopleMap.size() << "\nContent of Map:" << endl;
     for (const auto &age : PeopleMap){
 		cout << age.first << ", " << age.second << endl;
 	}
