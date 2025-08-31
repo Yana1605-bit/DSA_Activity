@@ -4,23 +4,22 @@
 using namespace std;
 
 int main(){
-	map <string, int> NameAge;
-	NameAge.insert (pair<string, int> ("Alice", 15));
-	NameAge.insert (pair<string, int> ("Bob", 20));
-	NameAge.insert (pair<string, int> ("Charlie", 35));
+	map <string, int> PeopleMap;
+	PeopleMap.insert (pair<string, int> ("Alice", 15));
+	PeopleMap.insert (pair<string, int> ("Bob", 20));
+	PeopleMap.insert (pair<string, int> ("Charlie", 35));
 
-	NameAge["Diana"] = 19;
-	NameAge["Mae"] = 20;
+	PeopleMap["Diana"] = 19;
+	PeopleMap["Mae"] = 20;
 	
 	cout << "Names & Ages: " << endl;
 	
-	for (const auto &age : NameAge){
+	for (const auto &age : PeopleMap){
 		cout << age.first << ", " << age.second << endl;
 	}
 	cout << endl;
 	
-	string Name = "Diana";
-	cout << Name << ", " << NameAge[Name] << endl;
+	cout << "Alice, " << PeopleMap["Alice"] << endl;
 	
 	return 0;
 }
