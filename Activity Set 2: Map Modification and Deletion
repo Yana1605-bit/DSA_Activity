@@ -4,33 +4,34 @@
 using namespace std;
 
 int main(){
-	map <string, int> NameAge;
-	NameAge.insert (pair<string, int> ("Alice", 15));
-	NameAge.insert (pair<string, int> ("Bob", 20));
-	NameAge.insert (pair<string, int> ("Charlie", 35));
+	map <string, int> PeopleMap;
+	PeopleMap.insert (pair<string, int> ("Alice", 15));
+	PeopleMap.insert (pair<string, int> ("Bob", 20));
+	PeopleMap.insert (pair<string, int> ("Charlie", 35));
 
-	NameAge["Diana"] = 19;
-	NameAge["Mae"] = 20;
+	PeopleMap["Diana"] = 19;
+	PeopleMap["Mae"] = 20;
 	
-	//Updated age of Bob
-	NameAge["Bob"] = 21;
+	//Updated Alice's age
+	PeopleMap["Alice"] = 16;
 	
-	cout << "Map Size" << endl;
-    for (const auto &age : NameAge){
+	cout << "Names & Ages: " << endl;
+	for (const auto &age : PeopleMap){
 		cout << age.first << ", " << age.second << endl;
 	}
 	cout << endl;
 	
+	//Specific person
 	string Name = "Diana";
-    auto name = NameAge.find(Name);
-	cout << Name << ", " << NameAge[Name] << endl;
+    auto name = PeopleMap.find(Name);
+    cout << name->first << ", " << name->second << endl;
 	cout << endl;
 	
 	//Erasing Bob
-	NameAge.erase("Charlie");
+	PeopleMap.erase("Charlie");
 	
-	cout << "Updated Map Size" << endl;
-    for (const auto &age : NameAge){
+	cout << "Updated Map Size:" << endl;
+    for (const auto &age : PeopleMap){
 		cout << age.first << ", " << age.second << endl;
 	}
 	
