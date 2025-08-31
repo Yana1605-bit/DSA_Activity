@@ -1,0 +1,27 @@
+#include <iostream>
+#include <map>
+#include <iostream>
+using namespace std;
+
+int main(){
+	map <string, int> NameAgeMap;
+	NameAgeMap.insert (pair<string, int> ("Alice", 15));
+	NameAgeMap.insert (pair<string, int> ("Bob", 20));
+	NameAgeMap.insert (pair<string, int> ("Charlie", 35));
+
+	
+	NameAgeMap["Diana"] = 19;
+	NameAgeMap["Mae"] = 20;
+	
+	cout << "Names & Ages: ";
+	
+	for (const auto &age : NameAgeMap){
+		cout << age.first << ", " << age.second << endl;
+	}
+	cout << endl;
+	
+	string Name = "Diana";
+	cout << Name << ", " << NameAgeMap[Name] << endl;
+	
+	return 0;
+}
