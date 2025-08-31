@@ -1,0 +1,38 @@
+#include <iostream>
+#include <map>
+#include <iostream>
+using namespace std;
+
+int main(){
+	map <string, int> NameAge;
+	NameAge.insert (pair<string, int> ("Alice", 15));
+	NameAge.insert (pair<string, int> ("Bob", 20));
+	NameAge.insert (pair<string, int> ("Charlie", 35));
+
+	NameAge["Diana"] = 19;
+	NameAge["Mae"] = 20;
+	
+	//Updated age of Bob
+	NameAge["Bob"] = 21;
+	
+	cout << "Map Size" << endl;
+    for (const auto &age : NameAge){
+		cout << age.first << ", " << age.second << endl;
+	}
+	cout << endl;
+	
+	string Name = "Diana";
+    auto name = NameAge.find(Name);
+	cout << Name << ", " << NameAge[Name] << endl;
+	cout << endl;
+	
+	//Erasing Bob
+	NameAge.erase("Charlie");
+	
+	cout << "Updated Map Size" << endl;
+    for (const auto &age : NameAge){
+		cout << age.first << ", " << age.second << endl;
+	}
+	
+	return 0;
+}
