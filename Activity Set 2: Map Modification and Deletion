@@ -28,11 +28,17 @@ int main(){
 	
 	//Erasing Bob
 	PeopleMap.erase("Charlie");
-	
-	cout << "Updated Map Size: " << PeopleMap.size() << "\nContent of Map:" << endl;
-    for (const auto &age : PeopleMap){
-		cout << age.first << ", " << age.second << endl;
-	}
+
+    int count = 0;
+    for (const auto &age : PeopleMap) {
+        count++;
+    }
+
+    cout << "Updated Map Size after deletion: " << count << endl;
+    cout << "Contents of the map:" << endl;
+    for (const auto &age : PeopleMap) {
+        cout << age.first << ", " << age.second << endl;
+    }
 	
 	return 0;
 }
