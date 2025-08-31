@@ -20,6 +20,7 @@ int main(){
 	cout << endl;
 	
 	cout << "Alice, " << PeopleMap["Alice"] << endl;
+	cout << "Yana, " << PeopleMap["Yana"] << endl;
 	
 	return 0;
 }
