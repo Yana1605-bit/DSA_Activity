@@ -1,19 +1,32 @@
 #include <iostream>
-#include <map>
+#include <map>       
 using namespace std;
+
+void Grade(const map<char, int>& GradeMap) {
+    for (auto &G : GradeMap) {
+        cout << "Grade " << G.first << ": " << G.second << endl;
+    }
+}
 
 int main() {
     map <char, int> Grades;
-    Grades.insert (pair<char, int> ('A', 90));
-    Grades.insert (pair<char, int> ('B', 85));
-    Grades.insert (pair<char, int> ('C', 80));
-    Grades.insert (pair<char, int> ('D', 75));
-    Grades.insert (pair<char, int> ('F', 70));
+    Grades.insert(pair<char, int>('A', 90));
+    Grades.insert(pair<char, int>('B', 85));
+    Grades.insert(pair<char, int>('C', 80));
+    Grades.insert(pair<char, int>('D', 75));
+    Grades.insert(pair<char, int>('F', 70));
+
+    cout << "Contents: " << endl;
+    for (auto &G: Grades) {
+        cout << G.first << " - " << G.second << endl;
+    }
+    cout << endl;
     
+    cout << "Custom format:";
     for (const auto &grade : Grades){
         cout << "Grade " << grade.first << ": " << grade.second << ", ";
     }
     cout << endl;
-
+    
     return 0;
 }
