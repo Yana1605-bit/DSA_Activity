@@ -3,20 +3,23 @@
 #include <map>
 using namespace std;
 
-int main() {
-    string word = "this is a test this is only a test";
-    stringstream sstream(word);   
-    
-    map <string, int> count;  
+int main(){
+	string words;
+	cout <<"Enter a word/s:
+	getline(cin, words);
 
-    string wordCount; 
-    while (sstream >> wordCount) { 
-        count[wordCount]++; 
-    }
+	stringstream sstream(words);
+	map<string, int> count;
 
-    for (const auto &Words : count) {
-        cout << Words.first << " = " << Words.second << endl;
-    }
+	string word;
+	while (sstream >> word){
+		count[word]++;
+	}
+	cout << endl;
 
-    return 0;
+	for (const auto &c: count){
+		cout << c.first <<"="<< c.second << endl;
+	}
+
+	return 0;
 }
