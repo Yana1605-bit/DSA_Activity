@@ -1,0 +1,19 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map <char, int> Grades;
+    Grades.insert (pair<char, int> ('A', 90));
+    Grades.insert (pair<char, int> ('B', 85));
+    Grades.insert (pair<char, int> ('C', 80));
+    Grades.insert (pair<char, int> ('D', 75));
+    Grades.insert (pair<char, int> ('F', 70));
+    
+    for (const auto &grade : Grades){
+        cout << "Grade " << grade.first << ": " << grade.second << ", ";
+    }
+    cout << endl;
+
+    return 0;
+}
