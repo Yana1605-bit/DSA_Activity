@@ -1,0 +1,38 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<string, map<string, int>> students;
+
+    students["Diana"]["Math"] = 95;
+    students["Diana"]["English"] = 93;
+    students["Diana"]["Science"] = 90;
+
+    students["Mae"]["Math"] = 97;
+    students["Mae"]["English"] = 90;
+    students["Mae"]["Science"] = 88;
+
+    students["Yana"]["Math"] = 89;
+    students["Yana"]["English"] = 96;
+    students["Yana"]["Science"] = 94;
+
+    for (auto &student : students) {
+        cout << "Student: " << student.first << endl;
+
+        int total = 0;
+        int count = 0;
+
+        for (auto &sub : student.second) {
+            cout << " -" << sub.first << ": " << sub.second << endl;
+            total += sub.second;
+            count++;
+        }
+        cout << endl;
+
+        double average = (count > 0) ? (double)total / count : 0;
+        cout << " Average: " << average << "\n" << endl;
+    }
+
+    return 0;
+}
